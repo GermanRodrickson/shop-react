@@ -1,9 +1,16 @@
 import React, { Component } from "react";
+import styled from "styled-components";
+
+const Wrapper = styled.section`
+  color: red;
+`
 
 class Prueba extends Component {
   render() {
     return (
-      <p>Test</p>
+      <Wrapper>
+        <p>Hello!</p>
+      </Wrapper>
     );
   }
 }
