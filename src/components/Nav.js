@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
+import search from '../img/search-icon.svg'
+
 const Wrapper = styled.section`
   display: flex;
   justify-content: space-around;
@@ -44,7 +46,7 @@ class Prueba extends Component {
           <li>More</li>
           <li>Info</li>
         </Nav>
-        <div>cart</div>
+        <div><img src={search} alt="search"/></div>
       </Wrapper>
     );
   }
