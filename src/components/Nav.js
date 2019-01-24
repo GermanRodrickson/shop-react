@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import search from '../img/search-icon.svg'
+import logo from '../img/test.png'
 
 const Wrapper = styled.section`
   display: flex;
@@ -19,7 +20,8 @@ const Nav = styled.ul`
   flex-direction: row;
 
   li {
-    margin: 0px 20px;
+    vertical-align: middle;
+    margin: 10px 20px;
     padding-bottom: 10px;
     transition: all 0.2s linear;
     background: (linear, left top, right top, from(#ffffff), to(#ffffff));
@@ -32,6 +34,7 @@ const Nav = styled.ul`
   li:hover {
     background-size: 100% 4px;
     color: #ffffff;
+    cursor: pointer;
   }
 `;
 
@@ -50,6 +53,7 @@ const Link = styled.a`
   background-size: 0 4px;
   background-repeat: no-repeat;
   background-position: left 110%;
+  cursor: pointer;
 
   &:hover {
     background-size: 100% 4px;
@@ -57,11 +61,16 @@ const Link = styled.a`
   }
 `;
 
+const Logo = styled.img`
+  width: 90px;
+  height: 50px;
+`;
+
 class Prueba extends Component {
   render() {
     return (
       <Wrapper>
-        <h1>logo</h1>
+        <Logo src={logo}/>
         <Nav>
           <li>Home</li>
           <li>Shop</li>
