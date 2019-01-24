@@ -28,7 +28,16 @@ const Input = styled.input`
   border: none;
   border-bottom: 1px solid white;
   padding-bottom: 10px;
+  vertical-align: bottom;
+  color: #fff;
 
+  &:focus {
+    outline: none;
+  }
+
+  &::placeholder {
+    color: #fff;
+  }
 `;
 
 const Button = styled.img`
