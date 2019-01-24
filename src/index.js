@@ -3,16 +3,14 @@ import ReactDOM from 'react-dom';
 
 import './index.css';
 
-import Prueba from './components/Prueba';
-import Nav from './components/Nav';
+import App from './App';
 
 const root = document.getElementById("root");
 
 ReactDOM.render(
 
   <section>
-    <Nav />
-    <Prueba />
+    <App />
   </section>
  
  
