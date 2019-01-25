@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 import search from '../img/search-icon.svg';
+import cancel from '../img/cancel.svg';
 
 const Wrapper = styled.section`
   background: rgba(72, 72, 72, 0.85);
@@ -9,6 +10,15 @@ const Wrapper = styled.section`
   z-index: 2;
   width: 100%;
   height: 100vh;
+`;
+
+const Cross = styled.img`
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
 `;
 
 const SearchWrapper = styled.div`
@@ -47,12 +57,14 @@ const Button = styled.img`
   height: 30px;
   border-bottom: 1px solid white;
   padding-bottom: 10px;
+  cursor: pointer;
 `;
 
 class Prueba extends Component {
   render() {
     return (
       <Wrapper>
+        <Cross src={cancel} />
         <SearchWrapper>
           <Input type="text" placeholder="Search here"/>
           <Button src={search} />
