@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 
 import Nav from './components/Nav';
+import Search from './components/Search';
 
 const Wrapper = styled.section`
   padding-top: 150px;
@@ -14,8 +15,12 @@ class Prueba extends Component {
     searchOpen: false
   };
 
-
   render() {
+    if(this.state.searchOpen) {
+      return <Search />
+    }
+
+
     return (
       <section>
         <Nav searchOpen={this.state.searchOpen}/>
