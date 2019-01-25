@@ -73,7 +73,7 @@ class Prueba extends Component {
   displaySearch = () => {
     console.log(this.props);
     this.setState({
-      searchOpen: 'true'
+      searchOpen: !this.props.searchOpen
     })
     console.log(this.props);
   }

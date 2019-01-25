@@ -18,18 +18,35 @@ class Prueba extends Component {
     };
   }
 
-  render() {
-    if(this.state.searchOpen) {
-      return <Search />
-    }
+  displaySearch = () => {
+    console.log(this.props);
+    this.setState({
+      searchOpen: true
+    });
+    console.log(this.props);
+  };
 
+  render() {
+    if (this.state.searchOpen) {
+       return (
+         <section>
+         <Search />
+          <Nav searchOpen={this.state.searchOpen} />
+
+          <Wrapper>
+            <p onClick={this.displaySearch}>Hello!</p>
+          </Wrapper>
+        </section>
+       )
+      
+    }
 
     return (
       <section>
-        <Nav searchOpen={this.state.searchOpen}/>
-        
+        <Nav searchOpen={this.state.searchOpen} />
+
         <Wrapper>
-          <p>Hello!</p>
+          <p onClick={this.displaySearch}>Hello!</p>
         </Wrapper>
       </section>
     );
