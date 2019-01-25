@@ -69,12 +69,14 @@ const Logo = styled.img`
 `;
 
 class Prueba extends Component {
+  
   displaySearch = () => {
-    console.log("hey");
+    console.log(this.props);
     this.setState({
-      searchOpen: true
-    });
-  };
+      searchOpen: 'true'
+    })
+    console.log(this.props);
+  }
 
   render() {
     return (
@@ -82,7 +84,7 @@ class Prueba extends Component {
         {/* <Search searchOpen={this.props.searchOpen}/> */}
 
         <Wrapper>
-          <Logo src={logo} />
+          <Logo src={logo}/>
           <Nav>
             <li>Home</li>
             <li>Shop</li>
@@ -90,7 +92,7 @@ class Prueba extends Component {
             <li>Info</li>
           </Nav>
           <div>
-            <Img src={searchButton} alt="search" onClick={this.displaySearch} />
+            <Img src={searchButton} alt="search"  onClick={this.displaySearch}/>
             <Link>My cart</Link>
           </div>
         </Wrapper>

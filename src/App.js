@@ -11,9 +11,12 @@ const Wrapper = styled.section`
 `
 
 class Prueba extends Component {
-  state = {
-    searchOpen: false
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchOpen: false
+    };
+  }
 
   render() {
     if(this.state.searchOpen) {
