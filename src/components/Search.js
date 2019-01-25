@@ -60,18 +60,17 @@ const Button = styled.img`
   cursor: pointer;
 `;
 
-class Prueba extends Component {
-  render() {
+const Prueba = (props) => {
     return (
       <Wrapper>
         <Cross src={cancel} />
         <SearchWrapper>
-          <Input type="text" placeholder="Search here"/>
+          <Input type="text" placeholder="Search here" />
           <Button src={search} />
         </SearchWrapper>
       </Wrapper>
     );
   }
-}
+
 
 export default Prueba;
