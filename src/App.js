@@ -3,19 +3,23 @@ import styled from 'styled-components';
 
 
 import Nav from './components/Nav';
-import Search from './components/Search';
 
 const Wrapper = styled.section`
+  margin-top: 150px;
   color: red;
 `
 
 class Prueba extends Component {
+  state = {
+    searchOpen: false
+  };
+
+
   render() {
     return (
       <section>
-        <Nav />
-        <Search></Search>
-
+        <Nav searchOpen={this.state.searchOpen}/>
+        
         <Wrapper>
           <p>Hello!</p>
         </Wrapper>

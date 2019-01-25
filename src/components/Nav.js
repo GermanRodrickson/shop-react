@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import search from '../img/search-icon.svg'
+import Search from "./Search";
+
+import searchButton from '../img/search-icon.svg'
 import logo from '../img/test.png'
 
 const Wrapper = styled.section`
@@ -69,19 +71,23 @@ const Logo = styled.img`
 class Prueba extends Component {
   render() {
     return (
-      <Wrapper>
-        <Logo src={logo}/>
-        <Nav>
-          <li>Home</li>
-          <li>Shop</li>
-          <li>More</li>
-          <li>Info</li>
-        </Nav>
-        <div>
-          <Img src={search} alt="search"/>
-          <Link>My cart</Link>
-        </div>
-      </Wrapper>
+      <section>
+        <Search searchOpen={this.props.searchOpen}/>
+
+        <Wrapper>
+          <Logo src={logo}/>
+          <Nav>
+            <li>Home</li>
+            <li>Shop</li>
+            <li>More</li>
+            <li>Info</li>
+          </Nav>
+          <div>
+            <Img src={searchButton} alt="search"/>
+            <Link>My cart</Link>
+          </div>
+        </Wrapper>
+      </section>
     );
   }
 }
