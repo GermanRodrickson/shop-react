@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import Nav from './components/Nav';
 
 const Wrapper = styled.section`
-  margin-top: 150px;
+  padding-top: 150px;
   color: red;
 `
 
