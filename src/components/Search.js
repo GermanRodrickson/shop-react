@@ -65,7 +65,7 @@ class Prueba extends Component {
   render() {
     return (
         <Wrapper>
-          <Cross src={cancel} />
+          <Cross src={cancel} onClick={() => this.props.closeSearch()}/>
           <SearchWrapper>
             <Input type="text" placeholder="Search here" />
             <Button src={search}/>

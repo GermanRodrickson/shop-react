@@ -24,12 +24,24 @@ class Prueba extends Component {
     });
   };
 
+  closeSearch = () => {
+    this.setState({
+      searchOpen: false
+    });
+  };
+
   render() {
     if (this.state.searchOpen) {
        return (
         <section>
-         <Search />
-          <Nav searchOpen={this.state.searchOpen} />
+         <Search 
+             searchOpen={this.state.searchOpen}
+             closeSearch={this.closeSearch}
+          />
+           <Nav
+             searchOpen={this.state.searchOpen}
+             displaySearch={this.displaySearch}
+           />
 
           <Wrapper>
             <p>Hello!</p>

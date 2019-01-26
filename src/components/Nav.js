@@ -72,8 +72,6 @@ class Prueba extends Component {
   render() {
     return (
       <section>
-        {/* <Search searchOpen={this.props.searchOpen}/> */}
-
         <Wrapper>
           <Logo src={logo} />
           <Nav>
