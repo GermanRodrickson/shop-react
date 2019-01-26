@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import styled from "styled-components";
 
 import search from '../img/search-icon.svg';
@@ -60,16 +60,19 @@ const Button = styled.img`
   cursor: pointer;
 `;
 
-const Prueba = (props) => {
+
+class Prueba extends Component {
+  render() {
     return (
-      <Wrapper>
-        <Cross src={cancel} />
-        <SearchWrapper>
-          <Input type="text" placeholder="Search here" />
-          <Button src={search} />
-        </SearchWrapper>
-      </Wrapper>
-    );
+        <Wrapper>
+          <Cross src={cancel} />
+          <SearchWrapper>
+            <Input type="text" placeholder="Search here" />
+            <Button src={search}/>
+          </SearchWrapper>
+        </Wrapper>
+      );
+    }
   }
 
 

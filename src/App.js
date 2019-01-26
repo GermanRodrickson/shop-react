@@ -19,22 +19,20 @@ class Prueba extends Component {
   }
 
   displaySearch = () => {
-    console.log(this.props);
     this.setState({
       searchOpen: true
     });
-    console.log(this.props);
   };
 
   render() {
     if (this.state.searchOpen) {
        return (
-         <section>
+        <section>
          <Search />
           <Nav searchOpen={this.state.searchOpen} />
 
           <Wrapper>
-            <p onClick={this.displaySearch}>Hello!</p>
+            <p>Hello!</p>
           </Wrapper>
         </section>
        )
@@ -43,10 +41,13 @@ class Prueba extends Component {
 
     return (
       <section>
-        <Nav searchOpen={this.state.searchOpen} />
+        <Nav 
+          searchOpen={this.state.searchOpen} 
+          displaySearch={this.displaySearch}
+        />
 
         <Wrapper>
-          <p onClick={this.displaySearch}>Hello!</p>
+          <p>Hello!</p>
         </Wrapper>
       </section>
     );

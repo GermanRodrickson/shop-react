@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-import Search from "./Search";
+// import Search from "./Search";
 
 import searchButton from '../img/search-icon.svg'
 import logo from '../img/test.png'
@@ -69,22 +69,13 @@ const Logo = styled.img`
 `;
 
 class Prueba extends Component {
-  
-  displaySearch = () => {
-    console.log(this.props);
-    this.setState({
-      searchOpen: !this.props.searchOpen
-    })
-    console.log(this.props);
-  }
-
   render() {
     return (
       <section>
         {/* <Search searchOpen={this.props.searchOpen}/> */}
 
         <Wrapper>
-          <Logo src={logo}/>
+          <Logo src={logo} />
           <Nav>
             <li>Home</li>
             <li>Shop</li>
@@ -92,7 +83,7 @@ class Prueba extends Component {
             <li>Info</li>
           </Nav>
           <div>
-            <Img src={searchButton} alt="search"  onClick={this.displaySearch}/>
+            <Img src={searchButton} alt="search" onClick={() => this.props.displaySearch()} />
             <Link>My cart</Link>
           </div>
         </Wrapper>
