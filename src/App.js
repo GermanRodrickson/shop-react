@@ -14,6 +14,7 @@ class Prueba extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      questions: [],
       searchOpen: false
     };
   }
@@ -31,33 +32,26 @@ class Prueba extends Component {
   };
 
   render() {
+    let search
     if (this.state.searchOpen) {
-       return (
+      search =
         <section>
          <Search 
              searchOpen={this.state.searchOpen}
              closeSearch={this.closeSearch}
           />
-           <Nav
-             searchOpen={this.state.searchOpen}
-             displaySearch={this.displaySearch}
-           />
-
-          <Wrapper>
-            <p>Hello!</p>
-          </Wrapper>
         </section>
-       )
-      
+    } else {
+      search = null;
     }
 
     return (
       <section>
+        {search}
         <Nav 
           searchOpen={this.state.searchOpen} 
           displaySearch={this.displaySearch}
         />
-
         <Wrapper>
           <p>Hello!</p>
         </Wrapper>
