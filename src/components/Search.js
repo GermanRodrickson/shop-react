@@ -61,7 +61,7 @@ const Button = styled.img`
 `;
 
 
-class Prueba extends Component {
+class Search extends Component {
   render() {
     return (
       <Wrapper>
@@ -76,4 +76,4 @@ class Prueba extends Component {
 }
 
 
-export default Prueba;
+export default Search;

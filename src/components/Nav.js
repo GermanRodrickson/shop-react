@@ -17,7 +17,7 @@ const Wrapper = styled.section`
   padding: 40px 0px;
 `;
 
-const Nav = styled.ul`
+const List = styled.ul`
   display: flex;
   flex-direction: row;
 
@@ -68,18 +68,18 @@ const Logo = styled.img`
   height: 50px;
 `;
 
-class Prueba extends Component {
+class Nav extends Component {
   render() {
     return (
       <section>
         <Wrapper>
           <Logo src={logo} />
-          <Nav>
+          <List>
             <li>Home</li>
             <li>Shop</li>
             <li>More</li>
             <li>Info</li>
-          </Nav>
+          </List>
           <div>
             <Img src={searchButton} alt="search" onClick={() => this.props.displaySearch()} />
             <Link>My cart</Link>
@@ -90,4 +90,4 @@ class Prueba extends Component {
   }
 }
 
-export default Prueba;
+export default Nav;

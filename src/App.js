@@ -10,7 +10,7 @@ const Wrapper = styled.section`
   color: red;
 `
 
-class Prueba extends Component {
+class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -60,4 +60,4 @@ class Prueba extends Component {
   }
 }
 
-export default Prueba;
+export default App;
