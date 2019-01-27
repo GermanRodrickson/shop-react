@@ -33,30 +33,24 @@ class Prueba extends Component {
   };
 
   render() {
-    const { searchOpen, transitionName} = this.state
+    const { searchOpen, transitionName } = this.state
     let search
     if (searchOpen) {
       search =
-        <CSSTransition
-          transitionName={transitionName}
-          transitionAppear={true}
-          transitionAppearTimeout={500}
-        >
-          <Search 
-              searchOpen={searchOpen}
-              transitionName={transitionName}
-              closeSearch={this.closeSearch}
+          <Search
+            searchOpen={searchOpen}
+            transitionName={transitionName}
+            closeSearch={this.closeSearch}
           />
-         </CSSTransition>
     } else {
       search = null;
     }
 
     return (
       <section>
-          {search}
-        <Nav 
-          searchOpen={searchOpen} 
+        {search}
+        <Nav
+          searchOpen={searchOpen}
           displaySearch={this.displaySearch}
         />
         <Wrapper>

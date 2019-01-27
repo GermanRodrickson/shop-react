@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import styled from "styled-components";
 
 import search from '../img/search-icon.svg';
@@ -12,12 +12,7 @@ const Wrapper = styled.section`
   width: 100%;
   height: 100vh;
   opacity: 0;
-
-  &.${this.props.transitionName}-appear-active {
-      opacity: 1;
-      transition: opacity 500ms ease-out;
-  }`
-;
+`;
 
 const Cross = styled.img`
   position: absolute;
@@ -71,16 +66,16 @@ const Button = styled.img`
 class Prueba extends Component {
   render() {
     return (
-        <Wrapper>
-          <Cross src={cancel} onClick={() => this.props.closeSearch()}/>
-          <SearchWrapper>
-            <Input type="text" placeholder="Search here" />
-            <Button src={search}/>
-          </SearchWrapper>
-        </Wrapper>
-      );
-    }
+      <Wrapper>
+        <Cross src={cancel} onClick={() => this.props.closeSearch()} />
+        <SearchWrapper>
+          <Input type="text" placeholder="Search here" />
+          <Button src={search} />
+        </SearchWrapper>
+      </Wrapper>
+    );
   }
+}
 
 
 export default Prueba;
