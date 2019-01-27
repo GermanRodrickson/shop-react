@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
 
 import Nav from './components/Nav';
@@ -14,7 +15,6 @@ class Prueba extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      questions: [],
       searchOpen: false
     };
   }
@@ -32,24 +32,30 @@ class Prueba extends Component {
   };
 
   render() {
+    const {searchOpen} = this.state
     let search
     if (this.state.searchOpen) {
       search =
-        <section>
-         <Search 
-             searchOpen={this.state.searchOpen}
-             closeSearch={this.closeSearch}
+        <CSSTransition
+          in={searchOpen}
+          appear={true}
+          timeout={300}
+          classNames='fade'
+        >
+          <Search 
+              searchOpen={searchOpen}
+              closeSearch={this.closeSearch}
           />
-        </section>
+         </CSSTransition>
     } else {
       search = null;
     }
 
     return (
       <section>
-        {search}
+          {search}
         <Nav 
-          searchOpen={this.state.searchOpen} 
+          searchOpen={searchOpen} 
           displaySearch={this.displaySearch}
         />
         <Wrapper>
