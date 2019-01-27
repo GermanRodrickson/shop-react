@@ -1,0 +1,10 @@
+.fade-appear {
+  opacity: 0;
+}
+
+.fade-appear .fade-appear-active {
+  opacity: 1;
+  background-color: red;
+  transition: .3s;
+  margin-right: 500px;
+}

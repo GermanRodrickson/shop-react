@@ -31,6 +31,7 @@ const List = styled.ul`
     background-size: 0 4px;
     background-repeat: no-repeat;
     background-position: left 110%;
+    font-size: 18px;
   }
 
   li:hover {
@@ -47,6 +48,7 @@ const Img = styled.img`
 
 const Link = styled.a`
   vertical-align: middle;
+  font-size: 18px;
   padding-bottom: 10px;
   margin-left: 10px;
   transition: all 0.2s linear;

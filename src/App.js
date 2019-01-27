@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
+import "./transitions.css";
 
 import Nav from './components/Nav';
 import Search from './components/Search';
-
-const Wrapper = styled.section`
-  padding-top: 150px;
-  color: red;
-`
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      questions: [],
       searchOpen: false
     };
   }
@@ -32,29 +28,32 @@ class App extends Component {
   };
 
   render() {
+    const {searchOpen} = this.state
     let search
-    if (this.state.searchOpen) {
+    if (searchOpen) {
       search =
-        <section>
-          <Search
-            searchOpen={this.state.searchOpen}
-            closeSearch={this.closeSearch}
+        <CSSTransition
+          in={searchOpen}
+          appear={true}
+          timeout={300}
+          classNames='fade'
+        >
+        <Search
+          searchOpen={searchOpen}
+          closeSearch={this.closeSearch}
           />
-        </section>
+        </CSSTransition>
     } else {
       search = null;
     }
 
     return (
       <section>
-        {search}
+          {search}
         <Nav
-          searchOpen={this.state.searchOpen}
+          searchOpen={searchOpen}
           displaySearch={this.displaySearch}
         />
-        <Wrapper>
-          <p>Hello!</p>
-        </Wrapper>
       </section>
     );
   }
