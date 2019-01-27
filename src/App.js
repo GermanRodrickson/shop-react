@@ -15,7 +15,8 @@ class Prueba extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchOpen: false
+      searchOpen: false,
+      transitionName: 'fade'
     };
   }
 
@@ -32,18 +33,18 @@ class Prueba extends Component {
   };
 
   render() {
-    const {searchOpen} = this.state
+    const { searchOpen, transitionName} = this.state
     let search
-    if (this.state.searchOpen) {
+    if (searchOpen) {
       search =
         <CSSTransition
-          in={searchOpen}
-          appear={true}
-          timeout={300}
-          classNames='fade'
+          transitionName={transitionName}
+          transitionAppear={true}
+          transitionAppearTimeout={500}
         >
           <Search 
               searchOpen={searchOpen}
+              transitionName={transitionName}
               closeSearch={this.closeSearch}
           />
          </CSSTransition>

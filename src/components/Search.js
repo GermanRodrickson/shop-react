@@ -4,13 +4,20 @@ import styled from "styled-components";
 import search from '../img/search-icon.svg';
 import cancel from '../img/cancel.svg';
 
+
 const Wrapper = styled.section`
   background: rgba(72, 72, 72, 0.85);
   position: fixed;
   z-index: 2;
   width: 100%;
   height: 100vh;
-`;
+  opacity: 0;
+
+  &.${this.props.transitionName}-appear-active {
+      opacity: 1;
+      transition: opacity 500ms ease-out;
+  }`
+;
 
 const Cross = styled.img`
   position: absolute;
