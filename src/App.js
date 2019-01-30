@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
+import sampleData from './test-data/sample-fishes';
 import "./transitions.css";
 
 import Nav from './components/Nav';
@@ -11,7 +12,8 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchOpen: false
+      searchOpen: false,
+      data: {}
     };
   }
 
@@ -26,6 +28,12 @@ class App extends Component {
       searchOpen: false
     });
   };
+
+  componentDidMount() {
+    this.setState({
+      data: sampleData
+    })
+  }
 
   render() {
     const {searchOpen} = this.state
@@ -54,6 +62,7 @@ class App extends Component {
           searchOpen={searchOpen}
           displaySearch={this.displaySearch}
         />
+        {JSON.stringify(this.state.data)}
       </section>
     );
   }
