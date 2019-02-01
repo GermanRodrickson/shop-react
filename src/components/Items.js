@@ -7,14 +7,10 @@ const Wrapper = styled.div`
 `
 
 class Items extends Component {
-  render() {
+  render(props) {
     return (
       <Wrapper>
-        {Object.keys(this.props.data).map((key) => 
-          <p key={key}>
-            {key}
-          </p>
-        )}
+        {this.props.details.name}
       </Wrapper>
     );
   }

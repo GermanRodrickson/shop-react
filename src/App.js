@@ -64,10 +64,11 @@ class App extends Component {
           displaySearch={this.displaySearch}
         />
 
-        <Items 
-          data={data}
-        />
-        {/* {JSON.stringify(data)} */}
+          {Object.keys(this.state.data).map((key) =>
+            <Items key={key} details={this.state.data[key]}>
+              {key}
+            </Items>
+          )}
       </section>
     );
   }
