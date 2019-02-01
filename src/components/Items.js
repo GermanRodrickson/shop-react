@@ -10,7 +10,11 @@ class Items extends Component {
   render() {
     return (
       <Wrapper>
-        {Object.keys(this.props.data)}
+        {Object.keys(this.props.data).map((key) => 
+          <p key={key}>
+            {key}
+          </p>
+        )}
       </Wrapper>
     );
   }
