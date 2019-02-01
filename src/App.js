@@ -7,13 +7,14 @@ import "./transitions.css";
 
 import Nav from './components/Nav';
 import Search from './components/Search';
+import Items from './components/Items';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       searchOpen: false,
-      data: {}
+      data: []
     };
   }
 
@@ -36,7 +37,7 @@ class App extends Component {
   }
 
   render() {
-    const {searchOpen} = this.state
+    const {searchOpen, data} = this.state
     let search
     if (searchOpen) {
       search =
@@ -62,7 +63,11 @@ class App extends Component {
           searchOpen={searchOpen}
           displaySearch={this.displaySearch}
         />
-        {JSON.stringify(this.state.data)}
+
+        <Items 
+          data={data}
+        />
+        {/* {JSON.stringify(data)} */}
       </section>
     );
   }
