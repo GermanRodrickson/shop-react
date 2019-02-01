@@ -10,7 +10,7 @@ class Items extends Component {
   render() {
     return (
       <Wrapper>
-        {this.props.data}}
+        {Object.keys(this.props.data)}
       </Wrapper>
     );
   }
