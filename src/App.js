@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
+import './transitions.css';
 
 import sampleData from "./test-data/sample-fishes";
 
@@ -49,8 +52,16 @@ class App extends Component {
 
     return (
       <section>
-          {search}
-          
+        <React.Fragment>
+          <CSSTransition
+            in={searchOpen}
+            timeout={1000}
+            classNames="message"
+          >
+            {search} 
+          </CSSTransition>
+        </React.Fragment>
+
         <Nav
           searchOpen={searchOpen}
           displaySearch={this.displaySearch}

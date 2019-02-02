@@ -1,14 +1,9 @@
 import React, { Component } from "react";
 import styled from "styled-components";
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 
 import search from '../img/search-icon.svg';
 import cancel from '../img/cancel.svg';
-import "../transitions.css";
-
-const appearDuration = 300;
-const transitionName = `example`;
 
 
 const Wrapper = styled.section`
@@ -17,15 +12,6 @@ const Wrapper = styled.section`
   z-index: 2;
   width: 100%;
   height: 100vh;
-  
-  &.${transitionName}-appear {
-    opacity: 0.01;
-  }
-
-  &.${transitionName}-appear-active {
-    opacity: 1;
-    transition: opacity ${appearDuration}ms ease-out;
-  }
 `;
 
 const Cross = styled.img`
@@ -79,21 +65,16 @@ const Button = styled.img`
 
 class Search extends Component {
   render() {
+    const {closeSearch} = this.props
+
     return (
-      <CSSTransition
-        transitionName={transitionName}
-        in={this.props.searchOpen}
-        appear={this.props.searchOpe === true}
-        timeout={appearDuration}
-      >
         <Wrapper>
-          <Cross src={cancel} onClick={() => this.props.closeSearch()} />
+          <Cross src={cancel} onClick={() => closeSearch()} />
           <SearchWrapper>
             <Input type="text" placeholder="Search here" />
             <Button src={search} />
           </SearchWrapper>
         </Wrapper>
-      </CSSTransition>
     );
   }
 }
