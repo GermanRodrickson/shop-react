@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-import sampleData from './test-data/sample-fishes';
 import "./transitions.css";
+import sampleData from "./test-data/sample-fishes";
 
 import Nav from './components/Nav';
 import Search from './components/Search';
@@ -41,34 +40,28 @@ class App extends Component {
     let search
     if (searchOpen) {
       search =
-        <CSSTransition
-          in={searchOpen}
-          appear={true}
-          timeout={300}
-          classNames='fade'
-        >
         <Search
           searchOpen={searchOpen}
           closeSearch={this.closeSearch}
-          />
-        </CSSTransition>
+        />
     } else {
-      search = null;
+      search = null
     }
 
     return (
       <section>
           {search}
+          
         <Nav
           searchOpen={searchOpen}
           displaySearch={this.displaySearch}
         />
 
-          {Object.keys(this.state.data).map((key) =>
-            <Items key={key} details={this.state.data[key]}>
-              {key}
-            </Items>
-          )}
+        {Object.keys(data).map((key) =>
+          <Items key={key} details={this.state.data[key]}>
+            {key}
+          </Items>
+        )}
       </section>
     );
   }

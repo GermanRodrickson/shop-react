@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
+
 
 import search from '../img/search-icon.svg';
 import cancel from '../img/cancel.svg';
@@ -64,6 +66,11 @@ const Button = styled.img`
 class Search extends Component {
   render() {
     return (
+      <CSSTransition
+        in={this.props.searchOpen}
+        appear={true}
+        timeout={300}
+      >
       <Wrapper>
         <Cross src={cancel} onClick={() => this.props.closeSearch()} />
         <SearchWrapper>
@@ -71,6 +78,7 @@ class Search extends Component {
           <Button src={search} />
         </SearchWrapper>
       </Wrapper>
+      </CSSTransition>
     );
   }
 }
