@@ -47,7 +47,7 @@ class App extends Component {
           closeSearch={this.closeSearch}
         />
     } else {
-      search = null
+      search = <React.Fragment></React.Fragment>
     }
 
     return (
