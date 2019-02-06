@@ -9,11 +9,21 @@ const Container = styled.div`
 `
 
 const Image = styled.img`
-  width: 100px;
-  height: 100px;
+  width: 140px;
+  height: 140px;
   display: block;
   margin: 0 auto;
 `
+
+const Name = styled.h3`
+  font-size: 22px;
+`
+
+const Price = styled.strong`
+  font-size: 16px;
+  color: #aaa;
+  display: block;
+`;
 
 class Items extends Component {
   render(props) {
@@ -22,8 +32,13 @@ class Items extends Component {
     return (
         <Container>
           <Image src={image} alt="fish "/>
-          {name}
-          {price}
+          <Name>
+            {name}
+          </Name>
+          <Price>
+            {price}
+          </Price>
+          <button>Buy this product</button>
         </Container>
     );
   }
