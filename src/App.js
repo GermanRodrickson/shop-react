@@ -52,16 +52,13 @@ class App extends Component {
 
     return (
       <section>
-        <React.Fragment>
           <CSSTransition
             in={searchOpen}
-            timeout={1000}
+            timeout={400}
             classNames="message"
           >
             {search} 
           </CSSTransition>
-        </React.Fragment>
-
         <Nav
           searchOpen={searchOpen}
           displaySearch={this.displaySearch}
