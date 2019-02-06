@@ -4,7 +4,7 @@ import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import './transitions.css';
 
-import sampleData from "./test-data/sample-fishes";
+import sampleData from "./sample-fishes";
 
 import Nav from './components/Nav';
 import Search from './components/Search';
