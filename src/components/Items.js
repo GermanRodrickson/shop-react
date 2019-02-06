@@ -29,11 +29,15 @@ const Price = styled.strong`
 
 const Button = styled.button`
   width: 200px;
-  padding: 5px;
+  height: 30px;
   border: 1px solid #000;
   border-radius: 6px;
   position: absolute;
   z-index: 1;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -15px;
 `
 
 class Items extends Component {
