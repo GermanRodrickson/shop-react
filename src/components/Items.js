@@ -16,10 +16,6 @@ const Button = styled.button`
   left: 50%;
   margin-left: -100px;
   margin-top: -15px;
-
-  &:hover {
-    background-color: red;
-  }
 `
 
 const Image = styled.img`
@@ -28,16 +24,12 @@ const Image = styled.img`
   display: block;
   margin: 0 auto;
   transition: .3s;
-
-  &:hover {
-    transform: scale(1.1);
-  }
-`
+  `
 
 const Name = styled.h3`
   font-size: 22px;
-  margin: 5px 0px;
-`
+  margin: 30px 0px 5px 0px;
+  `
 
 const Price = styled.strong`
   font-size: 16px;
@@ -54,9 +46,22 @@ const Container = styled.div`
   margin-bottom: 30px;
 `
 
-const ContainerImage= styled.div`
-
-`
+const ContainerImage = styled.div`
+  transition: .3s;
+  width: 300px;
+  margin: 0 auto;
+  height: 140px;
+  &:hover {
+    background-color: red;
+    ${Image} {
+      transform: scale(1.1);
+    }
+    ${Button} {
+      pointer-events: initial;
+      opacity: 1;
+    }
+  }
+`;
 
 class Items extends Component {
   render(props) {
