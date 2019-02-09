@@ -1,12 +1,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 
-const Container = styled.div`
-  width: 33%;
-  display: inline-block;
-  text-align:center;
-  position: relative;
-`
+
 
 const Image = styled.img`
   width: 140px;
@@ -28,7 +23,9 @@ const Price = styled.strong`
 `;
 
 const Button = styled.button`
-  width: 200px;
+  opacity: 0;
+  transition: .3s;
+  width: 150px;
   height: 30px;
   border: 1px solid #000;
   border-radius: 6px;
@@ -38,7 +35,26 @@ const Button = styled.button`
   left: 50%;
   margin-left: -100px;
   margin-top: -15px;
+
+  &:hover {
+    background-color: red;
+  }
 `
+
+
+const Container = styled.div`
+  width: 33%;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  margin-bottom: 30px;
+
+  &:hover {
+    ${Button} {
+      opacity: 1;
+    }
+  }
+`;
 
 class Items extends Component {
   render(props) {
