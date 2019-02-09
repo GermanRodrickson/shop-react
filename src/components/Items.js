@@ -5,18 +5,19 @@ import styled from "styled-components";
 const Button = styled.button`
   opacity: 0;
   pointer-events: none;
-  transition: .3s;
-  width: 200px;
+  transition: 0.3s;
+  width: 100px;
   height: 30px;
-  border: 1px solid #000;
   border-radius: 6px;
   position: absolute;
   z-index: 1;
   top: 50%;
   left: 50%;
-  margin-left: -100px;
-  margin-top: -15px;
-`
+  margin-left: -50px;
+  margin-top: -30px;
+  letter-spacing: 2px;
+  background-color: gold;
+`;
 
 const Image = styled.img`
   width: 140px;
@@ -48,13 +49,13 @@ const Container = styled.div`
 
 const ContainerImage = styled.div`
   transition: .3s;
-  width: 300px;
+  width: 150px;
   margin: 0 auto;
-  height: 140px;
+
   &:hover {
-    background-color: red;
     ${Image} {
       transform: scale(1.1);
+      opacity: .8;
     }
     ${Button} {
       pointer-events: initial;
@@ -71,11 +72,11 @@ class Items extends Component {
         <Container>
           <ContainerImage>
             <Image src={image} alt="fish "/>
-            <Button>Buy this product</Button>
+            <Button>Buy</Button>
           </ContainerImage>
 
           <Name>{name}</Name>
-          <Price>{price}</Price>
+          <Price>{price} €</Price>
           
         </Container>
     );
