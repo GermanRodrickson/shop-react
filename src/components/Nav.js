@@ -14,7 +14,6 @@ const Wrapper = styled.section`
   color: #ffffff;
   width: 100%;
   padding: 40px 0px;
-  margin-bottom: 20px;
 `;
 
 const List = styled.ul`

@@ -55,7 +55,7 @@ const ContainerImage = styled.div`
   &:hover {
     ${Image} {
       transform: scale(1.1);
-      opacity: .8;
+      opacity: .7;
     }
     ${Button} {
       pointer-events: initial;

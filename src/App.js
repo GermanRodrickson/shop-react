@@ -9,6 +9,7 @@ import sampleData from "./sample-fishes";
 import Nav from './components/Nav';
 import Search from './components/Search';
 import Items from './components/Items';
+import InitialImage from './components/InitialImage';
 
 class App extends Component {
   constructor(props) {
@@ -63,6 +64,8 @@ class App extends Component {
           searchOpen={searchOpen}
           displaySearch={this.displaySearch}
         />
+
+        <InitialImage />
 
         {Object.keys(data).map((key) =>
           <Items key={key} details={this.state.data[key]}>
