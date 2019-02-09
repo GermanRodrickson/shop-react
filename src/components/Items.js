@@ -2,30 +2,11 @@ import React, { Component } from "react";
 import styled from "styled-components";
 
 
-
-const Image = styled.img`
-  width: 140px;
-  height: 140px;
-  display: block;
-  margin: 0 auto;
-`
-
-const Name = styled.h3`
-  font-size: 22px;
-  margin: 5px 0px;
-`;
-
-const Price = styled.strong`
-  font-size: 16px;
-  color: #aaa;
-  display: block;
-  margin: 5px 0px;
-`;
-
 const Button = styled.button`
   opacity: 0;
+  pointer-events: none;
   transition: .3s;
-  width: 150px;
+  width: 200px;
   height: 30px;
   border: 1px solid #000;
   border-radius: 6px;
@@ -41,6 +22,29 @@ const Button = styled.button`
   }
 `
 
+const Image = styled.img`
+  width: 140px;
+  height: 140px;
+  display: block;
+  margin: 0 auto;
+  transition: .3s;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+`
+
+const Name = styled.h3`
+  font-size: 22px;
+  margin: 5px 0px;
+`
+
+const Price = styled.strong`
+  font-size: 16px;
+  color: #aaa;
+  display: block;
+  margin: 5px 0px;
+`
 
 const Container = styled.div`
   width: 33%;
@@ -48,13 +52,11 @@ const Container = styled.div`
   text-align: center;
   position: relative;
   margin-bottom: 30px;
+`
 
-  &:hover {
-    ${Button} {
-      opacity: 1;
-    }
-  }
-`;
+const ContainerImage= styled.div`
+
+`
 
 class Items extends Component {
   render(props) {
@@ -62,14 +64,14 @@ class Items extends Component {
 
     return (
         <Container>
-          <Image src={image} alt="fish "/>
-          <Name>
-            {name}
-          </Name>
-          <Price>
-            {price}
-          </Price>
-          <Button>Buy this product</Button>
+          <ContainerImage>
+            <Image src={image} alt="fish "/>
+            <Button>Buy this product</Button>
+          </ContainerImage>
+
+          <Name>{name}</Name>
+          <Price>{price}</Price>
+          
         </Container>
     );
   }

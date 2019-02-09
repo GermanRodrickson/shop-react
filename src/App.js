@@ -10,10 +10,6 @@ import Nav from './components/Nav';
 import Search from './components/Search';
 import Items from './components/Items';
 
-const ItemWrapper = styled.div`
-  padding-top: 150px;
-`;
-
 class App extends Component {
   constructor(props) {
     super(props);
@@ -68,13 +64,11 @@ class App extends Component {
           displaySearch={this.displaySearch}
         />
 
-        <ItemWrapper>
-          {Object.keys(data).map((key) =>
-            <Items key={key} details={this.state.data[key]}>
-              {key}
-            </Items>
-          )}
-        </ItemWrapper>
+        {Object.keys(data).map((key) =>
+          <Items key={key} details={this.state.data[key]}>
+            {key}
+          </Items>
+        )}
       </section>
     );
   }

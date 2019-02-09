@@ -9,12 +9,12 @@ import logo from '../img/test.png'
 const Wrapper = styled.section`
   display: flex;
   justify-content: space-around;
-  position: fixed;
   top: 0;
   background-color: black;
   color: #ffffff;
   width: 100%;
   padding: 40px 0px;
+  margin-bottom: 20px;
 `;
 
 const List = styled.ul`
